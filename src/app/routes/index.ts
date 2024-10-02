@@ -1,5 +1,7 @@
 import express from 'express';
 import { UserRoutes } from '../modules/user/user.route';
+import { CategoryRoutes } from '../modules/category/category.route';
+import { ProductRoutes } from '../modules/product/product.route';
 
 const router = express.Router();
 
@@ -12,18 +14,15 @@ const moduleRoutes = [
     path: '/users',
     route: UserRoutes,
   },
-//   {
-//     path: '/books',
-//     route: BookRoutes,
-//   },
-  /*{
-    path: '/orders',
-    route: OrderRoutes,
+  {
+    path: '/categories',
+    route: CategoryRoutes,
   },
   {
-    path: '/admins',
-    route: AdminRoutes
-  }, */
+    path: '/products',
+    route: ProductRoutes,
+  },
+
 ];
 
 moduleRoutes.forEach(route => router.use(route.path, route.route));
